@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta tags for character encoding and responsive design -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=800, initial-scale=1.0">
+
+  <!-- Title of the webpage -->
+  <title>Disk Scheduling Simulator</title>
+
+  <!-- Linking external CSS file for styling -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Main container to hold the entire layout -->
+  <div class="container">
+    
+    <!-- Left Panel: Contains all input fields for user interaction -->
+    <div class="left-panel">
+      <h1>Disk Scheduling Simulator</h1>
+
+      <!-- Input for request sequence -->
+      <label for="request-sequence">Request Sequence (space-separated):</label>
+      <input type="text" id="request-sequence" placeholder="45 21 67 89 50 34">
+
+      <!-- Input for initial head position -->
+      <label for="initial-head">Initial Head Position:</label>
+      <input type="number" id="initial-head" placeholder="50">
+
+      <!-- Input for total number of tracks available -->
+      <label for="track-number">Total Track Number:</label>
+      <input type="number" id="track-number" value="100">
+
+      <!-- Dropdown for selecting head movement direction -->
+      <label for="direction">Head Direction:</label>
+      <select id="direction">
+        <option value="left">Left</option>
+        <option value="right">Right</option>
+      </select>
+
+      <!-- Dropdown for choosing the disk scheduling algorithm -->
+      <label for="algorithm">Algorithm:</label>
+      <select id="algorithm">
+        <option value="fcfs">FCFS</option>   <!-- First Come, First Serve -->
+        <option value="sstf">SSTF</option>   <!-- Shortest Seek Time First -->
+        <option value="scan">SCAN</option>   <!-- Elevator Algorithm -->
+        <option value="cscan">C-SCAN</option> <!-- Circular SCAN -->
+        <option value="look">LOOK</option>   <!-- Similar to SCAN but optimized -->
+        <option value="clook">C-LOOK</option> <!-- Circular LOOK -->
+      </select>
+
+      <!-- Button to start the simulation -->
+      <button id="simulate">Simulate</button>
+    </div>
+
+    <!-- Right Panel: Displays the graphical output and results -->
+    <div class="right-panel">
+      <!-- Canvas for plotting the graph representation of disk scheduling -->
+      <canvas id="graph"></canvas>
+
+      <!-- Div to display the step-by-step solution -->
+      <div id="solution"></div>
+
+      <!-- Paragraph to show the total seek time calculated -->
+      <p id="seek-time">Total Seek Time: </p>
+    </div>
+
+  </div>
+
+  <!-- Linking external JavaScript file for interactivity -->
+  <script src="script.js"></script>
+
+</body>
+</html>
